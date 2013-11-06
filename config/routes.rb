@@ -1,4 +1,24 @@
 Ollalie::Application.routes.draw do
+  resources :campaign_types
+
+
+  resources :campaigns
+
+
+  resources :ideas
+
+
+  resources :tasks
+
+
+  resources :accounts
+
+
+  resources :users
+  
+  root :to => 'campaigns#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

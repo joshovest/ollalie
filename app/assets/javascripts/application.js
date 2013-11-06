@@ -13,3 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+	$('#new_account_flag').on('click', function() {
+		if ($(this).is(':checked')) {
+			$('#new_account_box').show();
+		} else {
+			$('#new_account_box').hide();
+		}
+	});
+});

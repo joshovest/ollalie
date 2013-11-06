@@ -58,5 +58,8 @@ module Ollalie
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.access_levels = [ "superuser", "admin", "editor", "read-only" ]
+    config.priorities = [ "high", "medium", "low" ]
   end
 end

@@ -1,0 +1,45 @@
+<%= form_for(@idea) do |f| %>
+  <% if @idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% @idea.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= f.select(:priority, options_for_select(Ollalie::Application.config.priorities.each_with_index.collect { |p, i| [p, i] })) %>
+  </div>
+  <div class="field">
+    <%= f.label :impact %><br />
+    <%= f.select(:impact, options_for_select(Ollalie::Application.config.priorities.each_with_index.collect { |p, i| [p, i] })) %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue_impact %><br />
+    <%= f.select(:revenue_impact, options_for_select(Ollalie::Application.config.priorities.each_with_index.collect { |p, i| [p, i] })) %>
+  </div>
+  <div class="field">
+    <%= f.label :technical_impact %><br />
+    <%= f.select(:technical_impact, options_for_select(Ollalie::Application.config.priorities.each_with_index.collect { |p, i| [p, i] })) %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_area :location %>
+  </div>
+  <div class="field">
+    <%= f.label :potential_learnings %><br />
+    <%= f.text_area :potential_learnings %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

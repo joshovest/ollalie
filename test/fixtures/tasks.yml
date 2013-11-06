@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  owner_id: 1
+  assignee_id: 1
+  start_date: 2013-11-05 14:57:54
+  end_date: 2013-11-05 14:57:54
+  status: 1
+  content: MyText
+
+two:
+  name: MyString
+  owner_id: 1
+  assignee_id: 1
+  start_date: 2013-11-05 14:57:54
+  end_date: 2013-11-05 14:57:54
+  status: 1
+  content: MyText

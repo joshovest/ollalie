@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  submitter_id: 1
+  location: MyText
+  potential_learnings: MyText
+  priority: 1
+  impact: 1
+  revenue_impact: 1
+  technical_impact: 1
+
+two:
+  name: MyString
+  submitter_id: 1
+  location: MyText
+  potential_learnings: MyText
+  priority: 1
+  impact: 1
+  revenue_impact: 1
+  technical_impact: 1

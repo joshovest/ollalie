@@ -1,0 +1,42 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :access_level %><br />
+    <%= f.select(:access_level, options_for_select(Ollalie::Application.config.access_levels.each_with_index.collect { |a, i| [a, i] })) %>
+  </div>
+  <div class="field">
+    <%= f.label :account_id %><br />
+    <%= f.collection_select(:account_id, Account.all, :id, :name, :include_blank => true) %>
+    <% if params[:action] == "new" %>
+    <br>
+    <%= check_box_tag(:new_account_flag) %> Create a new account and make this user the owner
+    <br>
+    <div id="new_account_box" style="display:none;">
+      <%= label_tag :new_account %>
+      <%= text_field_tag :new_account %>
+    </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
